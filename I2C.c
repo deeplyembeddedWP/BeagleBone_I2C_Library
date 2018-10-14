@@ -146,7 +146,7 @@ int i2c_read_register(int fd, unsigned char read_addr, unsigned char *read_data)
 		perror("I2C: Failed to write |");
 		return -1;
 	}
-	ret = read(fd, &read_data, I2C_ONE_BYTE);
+	ret = read(fd, read_data, I2C_ONE_BYTE);
 	if(ret == -1)
 		perror("I2C: Failed to read |");
 	if(ret == 0)
